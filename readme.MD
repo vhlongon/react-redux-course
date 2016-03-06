@@ -15,6 +15,8 @@ From **[Udemy](https://www.udemy.com/react-redux)**
 
 - run ```npm run write-bundle``` to start webpack and write ```bundle.js``` to ```dist``` folder
 
+- The entry point file is ```src/index.js``` and the output compiled file is ```dist/bundle.js```
+
 ## Course resources
 
 - **[github: https://github.com/StephenGrider/ReduxCasts](https://github.com/StephenGrider/ReduxCasts)**
