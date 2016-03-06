@@ -1,6 +1,8 @@
-# React test project
+# React and Redux Course
 
-Uses React, Webpack and Babel
+Uses React, Webpack (with hot reload) and Babel
+
+From **[Udemy](https://www.udemy.com/react-redux)**
 
 ## Install
  ```npm install``` to install all dependencies
@@ -13,22 +15,8 @@ Uses React, Webpack and Babel
 
 - run ```npm run write-bundle``` to start webpack and write ```bundle.js``` to ```dist``` folder
 
-#### Todo
+## Course resources
 
-Babel transform plugin doesn't work. dependencies are in place but a run time erro is thrown:
-
-**(0 , _typeof3.default) is not a function**
-
-the following should go on ```.babelrc``` under **plugins** in order to enable transform plugin:
-
-```
-"transform-runtime",
-["react-transform", {
-  "transforms": [{
-    "transform" : "react-transform-hmr",
-    "imports"   : ["react"],
-    "locals"    : ["module"]
-  }]
-}]
-
-```
+- **[github: https://github.com/StephenGrider/ReduxCasts](https://github.com/StephenGrider/ReduxCasts)**
+- **[email: ste.grider@gmail.com](ste.grider@gmail.com)**
+- **[twitter: @sg_in_sf](twitter: @sg_in_sf)**
