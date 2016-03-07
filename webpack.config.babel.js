@@ -1,11 +1,12 @@
 // var path = require('path');
 import path from 'path';
 import webpack from 'webpack';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
-    path: './dist/',
+    path: './dist/js',
     filename: 'bundle.js',
     publicPath: '/dist/js/'
   },
@@ -18,10 +19,18 @@ module.exports = {
   // resolve: {
   //   extensions: ['', '.js']
   // },
-  devtool: 'inline-source-map',
+  devtool: 'source-map',//'inline-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new BrowserSyncPlugin({
+      // browse to http://localhost:3434/ during development,
+      // ./public directory is being served
+      host: 'localhost',
+      port: 3430,
+      proxy: 'http://localhost:3434/',
+      files: ['dist/css/*.css', 'dist/images/*.*', '**/*.html', '!node_modules/**/*.html']
+    })
   ],
   module: {
     loaders: [
@@ -30,7 +39,14 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/
         // include: path.join(__dirname, 'scripts'),
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, './src/scss')]
   }
 }

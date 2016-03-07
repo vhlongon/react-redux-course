@@ -9,7 +9,7 @@ export default class App extends React.Component {
 
   render = () => {
     return (
-      <div>React simple starter</div>
+      <div>React simple starter alright!</div>
     );
   }
 }

@@ -4,8 +4,9 @@
   "description": "\"Test project using webpack with React and babel\"",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
-    "write-bundle": "webpack --config webpack.config.js -w"
+    "clean": "rm -f dist/{css/*,js/*,images/*}",
+    "postinstall": "webpack-dev-server",
+    "start": "webpack-dev-server"
   },
   "keywords": [
     "React",
@@ -14,11 +15,15 @@
   "author": "Victor Longon <vhlongon@yahoo.com.br>",
   "license": "MIT",
   "dependencies": {
+    "babel-runtime": "^6.3.19",
+    "css-loader": "^0.23.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "babel-runtime": "^6.3.19"
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.5.2",
     "babel-eslint": "^5.0.0",
     "babel-loader": "^6.2.3",
@@ -28,9 +33,19 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.5.2",
+    "browser-sync": "^2.11.1",
+    "css-loader": "^0.23.1",
+    "eslint": "^2.3.0",
+    "eslint-plugin-babel": "^3.1.0",
     "eslint-plugin-react": "^3.16.1",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1",
     "react-transform-hmr": "^1.0.2",
-    "webpack": "^1.12.13",
+    "sass-loader": "^3.1.2",
+    "style-loader": "^0.13.0",
+    "watch": "^0.17.1",
+    "watch-run": "^1.2.4",
+    "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   }
 }
