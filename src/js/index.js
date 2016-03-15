@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import YTSearch from 'youtube-api-search';
 import SearchBar from './components/search-bar';
+import VideoList from './components/video-list';
 
 import css from '../scss/styles.scss';
 
@@ -14,11 +15,12 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {videos: {}};
+    this.state = {videos: []};
 
     YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
       // same as this.setState({videos: videos}) using destructuring
       this.setState({videos});
+      console.log(videos);
     })
   }
 
@@ -27,6 +29,7 @@ class App extends Component {
     return (
       <div>
         <SearchBar />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
