@@ -15,6 +15,20 @@ const API_KEY = 'AIzaSyAkR_KUryY_eCDzpRGYIWEvYpI2yI2rSmc';
 
 class VideoPlayer extends Component {
 
+  //Set props validation
+  static propTypes = {
+      title: React.PropTypes.string.isRequired,
+      initialTerm: React.PropTypes.string.isRequired,
+      maxResults: React.PropTypes.number
+  };
+
+  //Set default props
+  static defaultProps = {
+    title: 'React youtube video player',
+    initialTerm: 'dogs',
+    maxResults: 5
+  };
+
   constructor(props) {
     super(props);
 
@@ -35,7 +49,6 @@ class VideoPlayer extends Component {
         videos: videos,
         selectedVideo: videos[0]
       });
-      console.log(videos);
     })
   }
 
@@ -53,13 +66,6 @@ class VideoPlayer extends Component {
       </div>
     );
   }
-}
-
-//Set default props
-VideoPlayer.defaultProps = {
-  title: 'React youtube video player',
-  initialTerm: 'dogs',
-  maxResults: 5
 }
 
 //Render component

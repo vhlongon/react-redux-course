@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 
 class SearchBar extends Component {
 
+  static propTypes = {
+    onSearchTermChange: React.PropTypes.isRequired
+  };
+
   constructor(props) {
     super(props);
     this.state = {term: ''};
