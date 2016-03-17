@@ -11,7 +11,7 @@ import css from '../scss/styles.scss';
 const API_KEY = 'AIzaSyAkR_KUryY_eCDzpRGYIWEvYpI2yI2rSmc';
 
 
-class App extends Component {
+class VideoPlayer extends Component {
 
   constructor(props) {
     super(props);
@@ -21,21 +21,27 @@ class App extends Component {
       selectedVideo: null
     };
 
-    YTSearch({key: API_KEY, term: 'surfboards'}, (videos) => {
+    //start the component with this term
+    let initialTerm = 'dogs';
+    this.videoSearch(this.props.initialTerm);
+  }
+
+  videoSearch(term) {
+    YTSearch({key: API_KEY, term: term, maxResults: this.props.maxResults}, (videos) => {
       // same as this.setState({videos: videos}) using destructuring
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
       });
+      console.log(videos);
     })
   }
-
 
   render = () => {
     return (
       <div className="video-player">
         <h1>{this.props.title}</h1>
-        <SearchBar />
+        <SearchBar onSearchTermChange={(term) => this.videoSearch(term)} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           videos={this.state.videos}
@@ -45,7 +51,15 @@ class App extends Component {
   }
 }
 
+//Set default props
+VideoPlayer.defaultProps = {
+  title: 'React youtube video player',
+  initialTerm: 'dogs',
+  maxResults: 5
+}
+
+//Render component
 ReactDOM.render(
-  <App title={'React video player'} />,
+  <VideoPlayer />,
   document.querySelector('.react-root')
 );

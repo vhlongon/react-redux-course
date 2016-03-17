@@ -3,6 +3,11 @@ body{
   background: white;
 }
 
+iframe {
+  border: none;
+  background-color: lighten(gray, 37.5);
+}
+
 .react-root {
   display: flex;
   justify-content: center;
@@ -14,7 +19,7 @@ body{
 // Base component (app)
 .video-player {
   max-width: 40em;
-  margin: 2em 0 0 0;
+  margin: 2em;
 }
 
 // SearchBar
@@ -26,6 +31,31 @@ body{
     padding: 1em;
     border: 2px solid lighten(gray, 37.5);
 
+  }
+}
+
+// VideoDetail
+.video-detail {
+  min-height: 320px;
+  @media(min-width: 480px) {
+    min-height: 480px;
+  }
+  width: 100%;
+  &.loading {
+    background-color: lighten(gray, 37.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    p {
+      z-index: 2;
+    }
   }
 }
 

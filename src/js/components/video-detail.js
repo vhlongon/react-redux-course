@@ -3,7 +3,9 @@ import React, {Component} from 'react';
 const VideoDetail = ({video}) => {
 
   if (!video) {
-    return <div>Loading...</div>
+    return (
+      <div className="video-detail loading">Loading...</div>
+    );
   }
 
   const videoId = video.id.videoId,
@@ -19,6 +21,7 @@ const VideoDetail = ({video}) => {
         <div>{video.snippet.description}</div>
       </div>
     </div>
+
   );
 }
 
