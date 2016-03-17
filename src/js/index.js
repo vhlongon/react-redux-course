@@ -6,6 +6,8 @@ import SearchBar from './components/search-bar';
 import VideoList from './components/video-list';
 import VideoDetail from './components/video-detail';
 
+import _ from 'lodash';
+
 import css from '../scss/styles.scss';
 
 const API_KEY = 'AIzaSyAkR_KUryY_eCDzpRGYIWEvYpI2yI2rSmc';
@@ -38,10 +40,12 @@ class VideoPlayer extends Component {
   }
 
   render = () => {
+    // here we use lodash to debounce/call the videoSearch funtion every 300 ms
+    const videoSearch = _.debounce((term) => {this.videoSearch(term)}, 300);
     return (
       <div className="video-player">
         <h1>{this.props.title}</h1>
-        <SearchBar onSearchTermChange={(term) => this.videoSearch(term)} />
+        <SearchBar onSearchTermChange={videoSearch} />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
           videos={this.state.videos}

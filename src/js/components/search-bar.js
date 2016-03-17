@@ -9,9 +9,7 @@ class SearchBar extends Component {
 
   onInputChange = (term) => {
     this.setState({term: term});
-    if(this.state.term.length >= 3) {
-      this.props.onSearchTermChange(term);
-    }
+    this.props.onSearchTermChange(term);
   }
 
   render = () => {
@@ -19,7 +17,7 @@ class SearchBar extends Component {
       <div className="search-bar">
         <input
           value={this.state.term}
-          placeholder="search after 3 caracters typed"
+          placeholder="search for something on youtube"
           onChange={(event) => this.onInputChange(event.target.value)} />
       </div>
     );
