@@ -33,7 +33,8 @@ class App extends Component {
 
   render = () => {
     return (
-      <div>
+      <div className="video-player">
+        <h1>{this.props.title}</h1>
         <SearchBar />
         <VideoDetail video={this.state.selectedVideo} />
         <VideoList
@@ -45,6 +46,6 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <App title={'React video player'} />,
   document.querySelector('.react-root')
 );

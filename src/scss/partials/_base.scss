@@ -3,18 +3,38 @@ body{
   background: white;
 }
 
+.react-root {
+  display: flex;
+  justify-content: center;
+}
 /**************
   Components
 **************/
 
-//VideoList
-
-.video-list {
-
+// Base component (app)
+.video-player {
+  max-width: 40em;
+  margin: 2em 0 0 0;
 }
 
-//VideoListItem
+// SearchBar
+.search-bar {
+  display: flex;
+  margin: 1em 0;
+  input {
+    width: 100%;
+    padding: 1em;
+    border: 2px solid lighten(gray, 37.5);
 
+  }
+}
+
+// VideoList
+.video-list {
+  margin: 2em 0 0 0;
+}
+
+// VideoListItem
 .video-list-item {
   cursor: pointer;
   transition: .3s;

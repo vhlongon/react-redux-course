@@ -5,7 +5,6 @@ import React, {Component} from 'react';
 // const video = props.video;
 const VideoListItem = ({video, onVideoSelected}) => {
   //
-  console.log(video);
   return (
     <li onClick={() => onVideoSelected(video)} className="video-list-item">
       <div className="media-object">
