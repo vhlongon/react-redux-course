@@ -1,8 +1,7 @@
-# React and Redux Course
+# React Video player using youtube API
 
 Uses React, Webpack (with hot reload) and Babel
 
-From **[Udemy](https://www.udemy.com/react-redux)**
 
 ## Install
  ```npm install``` to install all dependencies
@@ -16,9 +15,3 @@ From **[Udemy](https://www.udemy.com/react-redux)**
 - run ```npm run write-bundle``` to start webpack and write ```bundle.js``` to ```dist``` folder
 
 - The entry point file is ```src/index.js``` and the output compiled file is ```dist/bundle.js```
-
-## Course resources
-
-- **[github: https://github.com/StephenGrider/ReduxCasts](https://github.com/StephenGrider/ReduxCasts)**
-- **[email: ste.grider@gmail.com](ste.grider@gmail.com)**
-- **[twitter: @sg_in_sf](twitter: @sg_in_sf)**
